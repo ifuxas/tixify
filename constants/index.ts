@@ -50,7 +50,7 @@ export const plans = [
     credits: 20,
     inclusions: [
       {
-        label: "20 Free Credits",
+        label: "20 Free Transformations",
         isIncluded: true,
       },
       {
@@ -71,7 +71,7 @@ export const plans = [
     credits: 100,
     inclusions: [
       {
-        label: "100 Credits",
+        label: "100 Transformations",
         isIncluded: true,
       },
       {
@@ -92,7 +92,7 @@ export const plans = [
     credits: 400,
     inclusions: [
       {
-        label: "400 Credits",
+        label: "400 Transformations",
         isIncluded: true,
       },
       {
