@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose, { Mongoose } from 'mongoose';
 
 const MONGODB_URL = process.env.MONGODB_URL;
 
@@ -10,8 +10,8 @@ interface MongooseConnection {
 let cached: MongooseConnection = (global as any).mongoose
 
 if(!cached) {
-  cached = (global as any).mongoose = {
-    conn: null, promise: null
+  cached = (global as any).mongoose = { 
+    conn: null, promise: null 
   }
 }
 
@@ -22,8 +22,8 @@ export const connectToDatabase = async () => {
 
   cached.promise = 
     cached.promise || 
-    mongoose.connect(MONGODB_URL, {
-      dbName: 'tixify', bufferCommands: false
+    mongoose.connect(MONGODB_URL, { 
+      dbName: 'imaginify', bufferCommands: false 
     })
 
   cached.conn = await cached.promise;
