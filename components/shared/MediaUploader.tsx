@@ -92,7 +92,6 @@ const MediaUploader = ({
                 />
               </div>
                 <p className="p-14-medium">Click here to upload image</p>
-                <p className="p-14-medium">One image upload = minus 1 credit!</p>
             </div>
           )}
         </div>

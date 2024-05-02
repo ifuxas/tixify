@@ -300,7 +300,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             disabled={isTransforming || newTransformation === null}
             onClick={onTransformHandler}
           >
-            {isTransforming ? 'Transforming...' : 'Apply Transformation'}
+            {isTransforming ? 'Transforming...' : 'Apply Transformation (-1 credit)'}
           </Button>
           <Button 
             type="submit"
