@@ -34,6 +34,7 @@ import { getCldImageUrl } from "next-cloudinary"
 import { addImage, updateImage } from "@/lib/actions/image.actions"
 import { useRouter } from "next/navigation"
 import { InsufficientCreditsModal } from "./InsufficientCreditsModal"
+import { useToast } from "@/components/ui/use-toast"
  
 export const formSchema = z.object({
   title: z.string(),
@@ -52,6 +53,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
   const [transformationConfig, setTransformationConfig] = useState(config)
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
+  
+  const { toast } = useToast()
 
   const initialValues = data && action === 'Update' ? {
     title: data?.title,
@@ -174,6 +177,13 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
 
     startTransition(async () => {
       await updateCredits(userId, creditFee)
+    })
+
+    toast({
+      title: 'Image uploaded successfully',
+      description: '1 credit was deducted from your account',
+      duration: 5000,
+      className: 'success-toast' 
     })
   }
 
